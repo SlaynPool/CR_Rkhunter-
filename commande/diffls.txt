@@ -1,0 +1,24 @@
+ diff trucls.c src/ls.c 
+1582a1583
+> 
+1918a1920
+>       int quattre;
+1921,1922c1923,1924
+<                            "abcdfghiklmnopqrstuvw:xABCDFGHI:LNQRST:UXZ1",
+<                            long_options, &oi);
+---
+>                            "abcdfghiklmnopqrstuvw:xABCDFGHI:LNQRST:UXZ142",
+>                            long_options, &oi); 
+1927a1930,1940
+>         case '4':
+>           
+>           quattre = 1; 
+>           break;
+> 
+>         case '2':
+>           if ( quattre == 1 ){
+>             printf("Hello IUT\n");
+>             break;
+>         }
+> 
+

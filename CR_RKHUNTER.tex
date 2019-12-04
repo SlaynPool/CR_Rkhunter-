@@ -5,6 +5,7 @@
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{hyperref}
 \usepackage{graphicx}
+
 % \usepackage{fancyhdr}
 % \fancyhead{}
 % \fancyfoot{}
@@ -25,14 +26,14 @@
 %opening
 \title{CR RKHUNTER}
 \author{Nicolas Vadkerti}
-\usepackage{listingsutf8} % Required for inserting code snippets
+\usepackage{listings} % Required for inserting code snippets
 \usepackage[usenames,dvipsnames]{color} % Required for specifying custom colors and referring to colors by name
 
 \definecolor{DarkGreen}{rgb}{0.0,0.4,0.0} % Comment color
 \definecolor{highlight}{RGB}{255,251,204} % Code highlight color
 
 \lstdefinestyle{Style1}{ % Define a style for your code snippet, multiple definitions can be made if, for example, you wish to insert multiple code snippets using different programming languages into one document
-language=Perl, % Detects keywords, comments, strings, functions, etc for the language specified
+language=Bash, % Detects keywords, comments, strings, functions, etc for the language specified
 backgroundcolor=\color{highlight}, % Set the background color for the snippet - useful for highlighting
 basicstyle=\footnotesize\ttfamily, % The default font size and style of the code
 breakatwhitespace=false, % If true, only allows line breaks at white space
@@ -55,6 +56,8 @@ showtabs=false, % Display tabs in the code as lines
 stepnumber=5, % The step distance between line numbers, i.e. how often will lines be numbered
 stringstyle=\color{Purple}, % Strings are purple
 tabsize=2
+% literate={á}{{\'a}}1 {ã}{{\~a}}1 {é}{{\'e}}1,
+% inputencoding=utf8
 }
 
 \newcommand{\insertcode}[2]{\begin{itemize}\item[]\lstinputlisting[caption=#2,label=#1,style=Style1]{#1}\end{itemize}} 
@@ -79,7 +82,7 @@ On peut citer Hearthbleed qui utiliser une faille OpenSSL comme exemple d'ancien
 
 
 \subsection{Virus}
-s
+
 Le principe d'un virus Informatique est exactement le même q'un virus Biologique. On peut donc le définir comme un programe qui à pour but de se répliquer, souvent dans d'autres hôtes d'un réseau, dans le but de prendre le controle des machines. L'utilisations peut etre par exemple d'obtenir des bots pour des attaques par deni de service.
 
 
@@ -100,6 +103,32 @@ Le principe d'un virus Informatique est exactement le même q'un virus Biologiqu
 \section{Protection contre les Rootkit:  le cas de rkhunter}
 \subsection{   Installation de rkhunter }
 \insertcode{commande/installRkhunter.txt}{Installation de RKHUNTER}
+
+Commande pour utiliser RKHUNTER:
+Le fichiers de configuration principal de rkhunter est : \url{/etc/rkhunter.conf}
+Les logs générer par rkhunter sont ici : \url{/var/log/rkhunter.log}
+\insertcode{commande/manrkhunter.txt}{Commade pour utiliser RKHUNTER }
+
+Pour Fonctionner, rkhunter connait les condensés des fichiers importants  qu'il récupère en ligne. Cela lui sert donc pour vérifier l'integrité des fichiers crusiaux. De plus, il est capable de détécter si des chaines de caractère suspect sont present dans les binaires.
+
+Les signatures de rkhunter sont stockés dans \url{/var/lib/rkhunter/db/}.
+Dans les faits, meme si les fichiers ne sont accessible seulement par root :
+\insertcode{commande/lsdb.txt}{Droits du dossier ``signature''}
+on ne peut pas considérer q'un potentiel attaquant n'ai pas accés à l'user root. C'est pour cela qu'il est recommandé d'update la base. De plus, on peut imaginer stocké la db sur un stockage amovible, et le stocké dans un endroit sûr style un coffre-fort. 
+\section{Mise au point d'un rootkit élémentaire }
+\subsection{Modification de ls}
+Donc la partie ``difficile '' est de compilé coreutile, ou l'on trouve le src de ls:
+\insertcode{commande/installls.txt}{Compilation}
+
+Maintenant, nous pouvons modiifer les sources de ls :
+\insertcode{commande/diffls.txt}{Ls custom}
+On recompile avec make et c'est gagné !
+\insertcode{commande/lsstdout.txt}{Ls custom stdout}
+On peut donc placer notre nouveau ls dans /bin et rexecuté rkhunter
+
+
+
+
 
 
 

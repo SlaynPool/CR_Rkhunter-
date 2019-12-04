@@ -1,0 +1,7 @@
+git clone https://github.com/coreutils/coreutils
+cd coreutils
+#installer gnulib & gperf Cf votre distrib
+./bootstrap
+./configure
+make -j6
+

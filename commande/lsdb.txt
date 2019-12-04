@@ -1,0 +1,7 @@
+[root@MiniZbeub]/var/lib/rkhunter# ls -all 
+total 20
+drwx------  4 root root 4096  4 dc.  11:33 .
+drwxr-xr-x 47 root root 4096  4 dc.  11:33 ..
+drwx------  4 root root 4096  4 dc.  13:34 db
+drwx------  2 root root 4096  4 dc.  13:48 tmp
+

@@ -1,0 +1,13 @@
+[slaynpool@MiniZbeub]coreutils$ ./src/ls -42
+Hello IUT
+ABOUT-NLS	config.status  HACKING	    NEWS				 tests
+aclocal.m4	configure      init.cfg     po					 thanks-gen
+AUTHORS		configure.ac   INSTALL	    README				 THANKS.in
+autom4te.cache	COPYING        lib	    README-hacking			 THANKStt.in
+bootstrap	dist-check.mk  m4	    README-package-renamed-to-coreutils  TODO
+bootstrap.conf	doc	       maint.mk     README-prereq			 trucls.c
+build-aux	gl	       Makefile     README-release
+cfg.mk		gnulib	       Makefile.am  README-valgrind
+ChangeLog	gnulib-tests   Makefile.in  scripts
+config.log	GNUmakefile    man	    src
+

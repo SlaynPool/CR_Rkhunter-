@@ -1,0 +1,6 @@
+# Effectuer les verifications avec rkhunter 
+rkhunter -c
+# Mettre a jour les fichiers de rkhunter 
+rkhunter --update 
+# Verifier que la config de rkhunter est bonne
+rkhunter -C 
