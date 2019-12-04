@@ -124,7 +124,13 @@ Maintenant, nous pouvons modiifer les sources de ls :
 \insertcode{commande/diffls.txt}{Ls custom}
 On recompile avec make et c'est gagné !
 \insertcode{commande/lsstdout.txt}{Ls custom stdout}
-On peut donc placer notre nouveau ls dans /bin et rexecuté rkhunter
+On peut donc placer notre nouveau ls dans /usr/bin et rexecuté rkhunter
+Il se trouve rkhunter ne trouve rien ce qui m'attriste  beaucoup car c'est pas le bon ls dutout :'(
+\insertcode{commande/md5sum.txt}{Triste}
+
+\section{Tromper rkhunter}
+Pour ca, je remplacerai la commande md5sum par un script proche de celui la :
+\insertcode{commande/sha.sh}{sha256sum}
 
 
 

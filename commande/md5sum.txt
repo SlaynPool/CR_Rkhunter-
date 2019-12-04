@@ -1,0 +1,13 @@
+[slaynpool@MiniZbeub]~$ sha256sum /usr/bin/ls
+77ff9560e5ed292141f00cdd35dbf755e05ec4826d8581a03d2ff5a68efaa455  /usr/bin/ls
+[slaynpool@MiniZbeub]~$ sha256sum /bin/ls
+77ff9560e5ed292141f00cdd35dbf755e05ec4826d8581a03d2ff5a68efaa455  /bin/ls
+[slaynpool@MiniZbeub]~$ sha256sum ~/lssave 
+2cbb138d4097f05fffeb968b34a4e62884fc4755d7d043e2d3760950f1e1a9ee  /home/slaynpool/lssave
+[slaynpool@MiniZbeub]~$ sudo rkhunter -c 
+...
+    /usr/bin/locate                                          [ OK ]
+    /usr/bin/logger                                          [ OK ]
+    /usr/bin/login                                           [ OK ]
+    /usr/bin/ls                                              [ OK ]
+...
