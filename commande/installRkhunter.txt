@@ -1,0 +1,8 @@
+[slaynpool@MiniZbeub]~$ cd .env/build/
+[slaynpool@MiniZbeub]build$ cp ~/Telechargements/rkhunter-1.4.6.tar.gz .
+[slaynpool@MiniZbeub]build$ tar -xvf rkhunter-1.4.6.tar.gz
+...
+[slaynpool@MiniZbeub]build$ cd rkhunter-1.4.6/
+[slaynpool@MiniZbeub]rkhunter-1.4.6$ su - root
+Mot de passe : 
+[root@MiniZbeub]/home/slaynpool/.env/build/rkhunter-1.4.6# ./installer.sh --install

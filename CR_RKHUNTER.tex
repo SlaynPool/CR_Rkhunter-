@@ -5,27 +5,27 @@
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{hyperref}
 \usepackage{graphicx}
-\usepackage{fancyhdr}
-\fancyhead{}
-\fancyfoot{}
-\fancyhead[L]{\includegraphics[scale=0.03]{../image/logo_iutbeziers.png}}
-\fancyhead[C]{Rapport de Stage - SuperBeeLive}
-
-\fancyfoot[L]{\small Olivia SERENELLI-PESIN \normalsize}
-\fancyfoot[R]{\thepage/\pageref{LastPage}}
-%\fancyfoot[C]{\includegraphics[scale=0.03]{../images/logo/logo_abeille.png}}
-\renewcommand{\footrulewidth}{0pt}
-\renewcommand{\headrulewidth}{0,4pt}
-
-%Indique qu'il faut appliquer le style sur tout le doc 
-\makeatletter
-\let\ps@plain=\ps@fancy
-\makeatother
+% \usepackage{fancyhdr}
+% \fancyhead{}
+% \fancyfoot{}
+% \fancyhead[L]{\includegraphics[scale=0.03]{../image/logo_iutbeziers.png}}
+% \fancyhead[C]{Rapport de Stage - SuperBeeLive}
+% 
+% \fancyfoot[L]{\small Olivia SERENELLI-PESIN \normalsize}
+% \fancyfoot[R]{\thepage/\pageref{LastPage}}
+% %\fancyfoot[C]{\includegraphics[scale=0.03]{../images/logo/logo_abeille.png}}
+% \renewcommand{\footrulewidth}{0pt}
+% \renewcommand{\headrulewidth}{0,4pt}
+% 
+% %Indique qu'il faut appliquer le style sur tout le doc 
+% \makeatletter
+% \let\ps@plain=\ps@fancy
+% \makeatother
 
 %opening
-\title{Le Protocole MQTT}
+\title{CR RKHUNTER}
 \author{Nicolas Vadkerti}
-\usepackage{listings} % Required for inserting code snippets
+\usepackage{listingsutf8} % Required for inserting code snippets
 \usepackage[usenames,dvipsnames]{color} % Required for specifying custom colors and referring to colors by name
 
 \definecolor{DarkGreen}{rgb}{0.0,0.4,0.0} % Comment color
@@ -67,14 +67,39 @@ tabsize=2
 \maketitle
 
 
-\url{https://github.com/SlaynPool/CR_MQTT/}
+\url{https://github.com/SlaynPool/CR_Rkhunter-}
+
+
+\section{Définitions}
+\subsection{Rootkit}
+Un rootKit est un, ou plusieurs logiciels dont le but est de péréniser un accés. Le plus souvent, il sert a dissimuler la porte ouverte sur une machine une fois l'accés à celle-ci obtenue. 
+\subsection{0days}
+Une faille 0 days est un bug d'un logiciel qui laisse des failles sur une machines. On l'appelle 0days car il n'est pas encore patché voir connu par les dévellopeurs du logiciel. Les 0days sont donc très dangereuse. De fait, quand une faille 0days est découverte, on ne peut savoir depuis quand elle est realisable, ni si quelqu'un l'a exploité.
+On peut citer Hearthbleed qui utiliser une faille OpenSSL comme exemple d'ancienne faille 0 days qui à fais du bruit.
+
+
+\subsection{Virus}
+s
+Le principe d'un virus Informatique est exactement le même q'un virus Biologique. On peut donc le définir comme un programe qui à pour but de se répliquer, souvent dans d'autres hôtes d'un réseau, dans le but de prendre le controle des machines. L'utilisations peut etre par exemple d'obtenir des bots pour des attaques par deni de service.
 
 
 
+
+\subsection{CVE}
+
+ Common Vulnerabilities and Exposures
+ Le CVE est un dictionnaire de faille Informatique connu maintenue par le MITRE, un organisme publique Americain.
+ Ce dictionnaire sert de ``norme '' aux outils de sécurté comme les antivirus par exemple.
  
+ \subsection{La notion de Hash}
+ Le principe d'un hash, est simple à comprendre. L'idée est d'avoir un algorithme qui prend un fichier quelconque en entrée, et renvoie une signature de celui de taille constante et surout unique.
+ L'idée est donc de, ci je calcule le hash d'un fichier, si je modifie mon fichier, le hash sera completement different.
+ On peut donc s'assurer que personne n'a modifier mon fichier grace à ce hash.
+ Un algorithme de hashage n'est plus considéré comme fiable, à partir du moment où pour deux fichiers differents, nous somme capable de générer des hashs partiellement similaires ou entierement similaires
  
- 
- 
+\section{Protection contre les Rootkit:  le cas de rkhunter}
+\subsection{   Installation de rkhunter }
+\insertcode{commande/installRkhunter.txt}{Installation de RKHUNTER}
 
 
 
